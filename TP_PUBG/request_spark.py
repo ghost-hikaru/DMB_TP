@@ -1,7 +1,8 @@
+from pyspark import StorageLevel
 from pyspark.sql import SparkSession
 import pandas as pd
 from pyspark.sql.functions import avg, count, col
-
+import time
 # Créer une session Spark
 spark = SparkSession.builder.appName("pubg").getOrCreate()
 
@@ -78,12 +79,41 @@ def scores():
         scored_data.groupBy("player_name")
             .agg(avg("score").alias("average_score"), count('score').alias('number_of_games'))
             .orderBy("average_score", ascending=False)
-            .select("player_name", "average_score","number_of_games")
+            .select("player_name", "average_score","number_of_games",)
             .limit(10)
     )
 
     # Afficher les résultats
     result_score.show()
+
+# Partie 5 - Persistance
+# 1. Obtenez, en plus des meilleurs joueurs, le nombre total de joueurs distincts. (voir count, Distinct)
+def distinct_player():
+    pubg_all_data = spark.read.csv("../data/agg_match_stats_0.csv", header=True, inferSchema=True)
+    # Exécution sans persistance
+    start_time = time.time()
+    distinct_players_count = pubg_data.select("player_name").distinct().count()
+    end_time = time.time()
+    print(f"Nombre total de joueurs distincts : {distinct_players_count}")
+    print(f"Temps sans persistance : {end_time - start_time} secondes")
+
+# 3. Appliquez la persistance sur l’état du jeu de données qui vous semble le plus opportun pour répondre à la première question ci-dessus. (voir persist)
+def distinct_player_with_persistance():
+    pubg_all_data = spark.read.csv("../data/agg_match_stats_0.csv", header=True, inferSchema=True)
+    pubg_all_data.persist(StorageLevel.MEMORY_AND_DISK)
+    distinct_players_count = pubg_all_data.select("player_name").distinct().count()
+
+    print(f"Nombre total de joueurs distincts : {distinct_players_count}")
+    # Exécution avec persistance
+    start_time = time.time()
+    result_with_persistence = pubg_all_data.collect()  # collect() force l'évaluation et la persistance
+    end_time = time.time()
+    print(f"Nombre total de joueurs distincts : {distinct_players_count}")
+    print(f"Temps avec persistance : {end_time - start_time} secondes")
+
+# 4. Obtenez les meilleurs joueurs et le nombre de joueurs en mesurant le temps de calcul de ces deux opérations avec et sans persistance sur 3 exécutions.
+def comp_time_persistance():
+    return True
 
 # MAIN
 print("Partie 3 - Les meilleurs joueurs \n")
@@ -104,6 +134,16 @@ filtered_player_without_null()
 print("\n")
 print("Partie 4 - Score des joueurs \n")
 scores()
+print("\n")
+print("Partie 5 - Persistance \n")
+print("Question 1 :\n")
+distinct_player()
+print("\n")
+print("Question 3 :\n")
+distinct_player_with_persistance()
+print("\n")
+print("Question 4 :\n")
+
 print("\n")
 print("Fin des données \n")
 # Arrêter la session Spark
