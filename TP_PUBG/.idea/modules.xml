@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TP_PUBG.iml" filepath="$PROJECT_DIR$/.idea/modules/TP_PUBG.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TP_PUBG-build.iml" filepath="$PROJECT_DIR$/.idea/modules/TP_PUBG-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TP_PUBG.iml" filepath="$PROJECT_DIR$/.idea/TP_PUBG.iml" />
     </modules>
   </component>
 </project>
