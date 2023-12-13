@@ -1,0 +1,88 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.9.7 (Oracle Corporation Java 11.0.16)
+[debug] Load.defaultLoad until apply took 65.886042ms
+[debug]           Load.loadUnit: plugins took 85.596167ms
+[debug]           Load.loadUnit: defsScala took 0.140209ms
+[debug] [Loading] Scanning directory /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 18.067916 ms
+[debug]               Load.resolveProject(tp_pubg-build) took 34.767625ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id tp_pubg-build, base: /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project, plugins: List(<none>))) took 89.382708ms
+[debug] [Loading] Done in /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project, returning: (tp_pubg-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 115.748917ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.092875ms
+[debug]         Load.loadUnit(file:/Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project/, ...) took 203.782625ms
+[debug]       Load.apply: load took 479.035208ms
+[debug]       Load.apply: resolveProjects took 5.091958ms
+[debug]       Load.apply: finalTransforms took 30.055958ms
+[debug]       Load.apply: config.delegates took 3.866667ms
+[debug]       Load.apply: Def.make(settings)... took 239.14125ms
+[debug]       Load.apply: structureIndex took 51.566541ms
+[debug]       Load.apply: mkStreams took 0.7465ms
+[info] loading project definition from /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 1911.896583ms
+[debug]     Load.loadUnit: defsScala took 0.001542ms
+[debug] [Loading] Scanning directory /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG
+[debug]       Load.loadUnit: mkEval took 3.901542ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.752417 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 1.222291ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG, plugins: List(<none>))) took 3.557916ms
+[debug] [Loading] Done in /Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1524.346ms
+[debug]     Load.loadUnit: cleanEvalClasses took 2.009583ms
+[debug]   Load.loadUnit(file:/Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/, ...) took 3438.806625ms
+[debug] Load.apply: load took 3449.15525ms
+[debug] Load.apply: resolveProjects took 0.057958ms
+[debug] Load.apply: finalTransforms took 5.928708ms
+[debug] Load.apply: config.delegates took 0.200833ms
+[debug] Load.apply: Def.make(settings)... took 47.399417ms
+[debug] Load.apply: structureIndex took 15.185667ms
+[debug] Load.apply: mkStreams took 0.002292ms
+[info] set current project to TP_PUBG (in build file:/Users/melvin/Documents/ESIR/ESIR3/S9/DMB_/DMB_TP/TP_PUBG/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///Users/melvin/.sbt/1.0/server/5c13419d908d360da364/sock
+[debug] Writing bsp connection file
+[info] started sbt server
