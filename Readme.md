@@ -4,6 +4,7 @@ A l'aide de la commande WC, on peut remarquer que nous avons 13 849 288 lignes d
 
 # 3 - Les meilleurs joueurs
 7. Tableau en fonction de la position
+
 | player_name     | average_position | number_of_games |
 |-----------------|------------------|------------------|
 | ChanronG         | 9.0              | 4                |
