@@ -94,58 +94,58 @@ On vient tout d'abord transformé nos date pour pouvoir les comparé a celle de 
 Pour cela on vient trier le tableau, pour ensuite calculer pour chaque station le nombre de trajet pour lequel il est en station de départ. Afin de faciliter les calculs et les comparaisons, quand j'ai créer mes RDD j'ai hashé les noms des stations.
 
 ```
-Station 639314359 a 2375 trajets entrants.
-Station 1354324787 a 2026 trajets entrants.
-Station 1549718166 a 1677 trajets entrants.
-Station 3758876234 a 1518 trajets entrants.
-Station 3808540238 a 1352 trajets entrants.
-Station 1624497230 a 1296 trajets entrants.
-Station 926534974 a 1296 trajets entrants.
-Station 3815922404 a 1261 trajets entrants.
-Station 3815963900 a 1206 trajets entrants.
-Station 1008954473 a 1126 trajets entrants.
+Station : 639314359 a 2375 trajets entrants.
+Station : 1354324787 a 2026 trajets entrants.
+Station : 1549718166 a 1677 trajets entrants.
+Station : 3758876234 a 1518 trajets entrants.
+Station : 3808540238 a 1352 trajets entrants.
+Station : 1624497230 a 1296 trajets entrants.
+Station : 926534974 a 1296 trajets entrants.
+Station : 3815922404 a 1261 trajets entrants.
+Station : 3815963900 a 1206 trajets entrants.
+Station : 1008954473 a 1126 trajets entrants.
 ```
 
 ```
-Station Grove St PATH a 2375 trajets entrants.
-Station Hoboken Terminal - River St & Hudson Pl a 2026 trajets entrants.
-Station Hoboken Terminal - Hudson St & Hudson Pl a 1677 trajets entrants.
-Station Sip Ave a 1518 trajets entrants.
-Station Hamilton Park a 1352 trajets entrants.
-Station South Waterfront Walkway - Sinatra Dr & 1 St a 1296 trajets entrants.
-Station City Hall - Washington St & 1 St a 1296 trajets entrants.
-Station Newport PATH a 1261 trajets entrants.
-Station Newport Pkwy a 1206 trajets entrants.
-Station Hoboken Ave at Monmouth St a 1126 trajets entrants.
+Station : Grove St PATH a 2375 trajets entrants.
+Station : Hoboken Terminal - River St & Hudson Pl a 2026 trajets entrants.
+Station : Hoboken Terminal - Hudson St & Hudson Pl a 1677 trajets entrants.
+Station : Sip Ave a 1518 trajets entrants.
+Station : Hamilton Park a 1352 trajets entrants.
+Station : South Waterfront Walkway - Sinatra Dr & 1 St a 1296 trajets entrants.
+Station : City Hall - Washington St & 1 St a 1296 trajets entrants.
+Station : Newport PATH a 1261 trajets entrants.
+Station : Newport Pkwy a 1206 trajets entrants.
+Station : Hoboken Ave at Monmouth St a 1126 trajets entrants.
 ```
 
 #### 2.2.2) Les 10 stations ayant le plus de trajets entrant
 Pour cela on vient trier le tableau, pour ensuite calculer pour chaque station le nombre de trajet pour lequel il est en station d'arriver. Afin de faciliter les calculs et les comparaisons, quand j'ai créer mes RDD j'ai hashé les noms des stations.
 
 ```
-Station 639314359 a 2358 trajets sortants.
-Station 1354324787 a 2133 trajets sortants.
-Station 3758876234 a 1671 trajets sortants.
-Station 1549718166 a 1652 trajets sortants.
-Station 3815922404 a 1303 trajets sortants.
-Station 3808540238 a 1294 trajets sortants.
-Station 926534974 a 1248 trajets sortants.
-Station 1624497230 a 1241 trajets sortants.
-Station 3815963900 a 1213 trajets sortants.
-Station 2672553465 a 1089 trajets sortants.
+Station : 639314359 a 2358 trajets sortants.
+Station : 1354324787 a 2133 trajets sortants.
+Station : 3758876234 a 1671 trajets sortants.
+Station : 1549718166 a 1652 trajets sortants.
+Station : 3815922404 a 1303 trajets sortants.
+Station : 3808540238 a 1294 trajets sortants.
+Station : 926534974 a 1248 trajets sortants.
+Station : 1624497230 a 1241 trajets sortants.
+Station : 3815963900 a 1213 trajets sortants.
+Station : 2672553465 a 1089 trajets sortants.
 ```
 
 ```
-Station Grove St PATH a 2358 trajets sortants.
-Station Hoboken Terminal - River St & Hudson Pl a 2133 trajets sortants.
-Station Sip Ave a 1671 trajets sortants.
-Station Hoboken Terminal - Hudson St & Hudson Pl a 1652 trajets sortants.
-Station Newport PATH a 1303 trajets sortants.
-Station Hamilton Park a 1294 trajets sortants.
-Station City Hall - Washington St & 1 St a 1248 trajets sortants.
-Station South Waterfront Walkway - Sinatra Dr & 1 St a 1241 trajets sortants.
-Station Newport Pkwy a 1213 trajets sortants.
-Station Marin Light Rail a 1089 trajets sortants.
+Station : Grove St PATH a 2358 trajets sortants.
+Station : Hoboken Terminal - River St & Hudson Pl a 2133 trajets sortants.
+Station : Sip Ave a 1671 trajets sortants.
+Station : Hoboken Terminal - Hudson St & Hudson Pl a 1652 trajets sortants.
+Station : Newport PATH a 1303 trajets sortants.
+Station : Hamilton Park a 1294 trajets sortants.
+Station : City Hall - Washington St & 1 St a 1248 trajets sortants.
+Station : South Waterfront Walkway - Sinatra Dr & 1 St a 1241 trajets sortants.
+Station : Newport Pkwy a 1213 trajets sortants.
+Station : Marin Light Rail a 1089 trajets sortants.
 ```
 
 ## 3 - Proximité entre les stations
