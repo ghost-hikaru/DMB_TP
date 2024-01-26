@@ -40,6 +40,7 @@ Si on compare ces 2 tableaux on peut remarquer que les joueurs sont similaires. 
 # 4 - Score des joueurs
 Tableau des 10 meilleurs joueurs :
 
+
 +-------------+-------------+---------------+
 |  player_name|average_score|number_of_games|
 +-------------+-------------+---------------+
@@ -56,3 +57,8 @@ Tableau des 10 meilleurs joueurs :
 +-------------+-------------+---------------+
 
 On peut en déduite que le 1er à du être 1er de son classement et faire énormement de dégat ou asssit afin de se hisser aussi haut. 
+
+# Partie 5 - Persistance
+Étant donné que vous disposez d'un fichier CSV relativement important de 2 Go, le choix du mode de persistance doit tenir compte de la taille de la mémoire disponible et du besoin d'optimiser les performances.
+
+Dans le cas d'un fichier de cette taille, l'option MEMORY_ONLY pourrait entraîner une utilisation importante de la mémoire. Cependant, il peut être intéressant d'essayer d'utiliser MEMORY_ONLY_SER (sérialisation en mémoire) car cela peut réduire l'utilisation de la mémoire par rapport à MEMORY_ONLY, bien que cela puisse entraîner une légère augmentation du temps de traitement dû à la nécessité de désérialiser les données lors de leur utilisation.
