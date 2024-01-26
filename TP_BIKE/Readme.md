@@ -3,8 +3,7 @@
 Le but de ce tp est d'utiliser <strong>Spark</strong> ainsi que la librairie <strong>graphX</strong>. Pour cela nous allons travaillé en <strong>Scala</strong>, sur un jeu de donnée qui représente des trajets entre plusieurs station de vélo.
 
 ## 1 - Préparation des données
-1.1) 
-La première étape va être de load les data.
+### 1.1) Load des data.
 
 ```scala
 val sparkConf = new SparkConf().setAppName("graphXTP").setMaster("local[1]")
@@ -48,7 +47,7 @@ def parseLine(line: String): Option[Trip] = {
     }
 }
 ```
-1.2) 
+### 1.2) Création du graphes 
 
 On va maintenant créer un graphe dont les noeuds représentent des stations de vélos et les relations représentent des trajets de vélos entre deux stations. Pour cela on va créer les RDD des stations et des Trips. Dans notre cas un trip sera composé de la station de départ, de la station d'arrivé et du trip. Tandis que une station contient un objet/class station avec les informations indiqué plus haut.
 
