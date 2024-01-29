@@ -20,7 +20,7 @@ A l'aide de la commande WC, on peut remarquer que nous avons 13 849 288 lignes d
 +---------------+----------------+---------------+
 ```
 
-Tableau en fonction des kill effectués
+Tableau en fonction des kills effectués
 ```
 +--------------+-------------+---------------+
 |   player_name|average_kills|number_of_games|
@@ -39,7 +39,7 @@ Tableau en fonction des kill effectués
 ```
 
 
-Si on compare ces 2 tableaux on peut remarquer que les joueurs sont similaires. On peut donc en déduire que pour effectuer des Top1, il faut faire des dégat et ne pas rester cacher dans la map.
+Si on compare ces 2 tableaux, on peut remarquer que les joueurs sont similaires. On peut donc en déduire que pour effectuer des Top1, il faut faire des dégâts et ne pas rester cacher dans la carte.
 
 # 4 - Score des joueurs
 Tableau des 10 meilleurs joueurs :
@@ -62,9 +62,9 @@ Tableau des 10 meilleurs joueurs :
 ```
 
 
-On peut en déduite que le 1er à du être 1er de son classement et faire énormement de dégat ou asssit afin de se hisser aussi haut. 
+On peut en déduite que le 1er a du être 1er de son classement et faire énormement de dégâts et/ou d'assit afin de se hisser aussi haut. 
 
 # Partie 5 - Persistance
-Étant donné que vous disposez d'un fichier CSV relativement important de 2 Go, le choix du mode de persistance doit tenir compte de la taille de la mémoire disponible et du besoin d'optimiser les performances.
+Étant donné que nous disposons d'un fichier CSV relativement important de 2 Go, le choix du mode de persistance doit tenir compte de la taille de la mémoire disponible et du besoin d'optimiser les performances.
 
 Dans le cas d'un fichier de cette taille, l'option MEMORY_ONLY pourrait entraîner une utilisation importante de la mémoire. Cependant, il peut être intéressant d'essayer d'utiliser MEMORY_ONLY_SER (sérialisation en mémoire) car cela peut réduire l'utilisation de la mémoire par rapport à MEMORY_ONLY, bien que cela puisse entraîner une légère augmentation du temps de traitement dû à la nécessité de désérialiser les données lors de leur utilisation.
