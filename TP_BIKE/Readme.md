@@ -1,6 +1,6 @@
 # TP BIKE
 
-Le but de ce tp est d'utiliser <strong>Spark</strong> ainsi que la librairie <strong>graphX</strong>. Pour cela nous allons travaillé en <strong>Scala</strong>, sur un jeu de donnée qui représente des trajets entre plusieurs station de vélo.
+Le but de ce tp est d'utiliser <strong>Spark</strong> ainsi que la librairie <strong>graphX</strong>. Pour cela nous allons travailler en <strong>Scala</strong>, sur un jeu de données qui représente des trajets entre plusieurs stations de vélo.
 
 ## 1 - Préparation des données
 ### 1.1) Load des data.
@@ -15,7 +15,7 @@ val tripRDD: RDD[Trip] = rddFromFile.flatMap(parseLine)
 
 ```
 
-La dernière ligne va appeler une méthode qui va permettre de mettre en ordre les données de notre trajet. Par exemple dans cette méthode on va récupérer les infos essentielles à notre trajet et par exemple calculé le temps du trajet. Mais avant sa, il va falloir créer des classes car c'est de cette façon que fonctionne Scala. Dans notre cas nous créons 2 classes <strong>Station</strong> et <strong>Trip</strong>.
+La dernière ligne va appeler une méthode qui va permettre de mettre en ordre les données de notre trajet. Par exemple, dans cette méthode on va récupérer les informations essentielles à notre trajet et, par exemple, calculer le temps du trajet. Mais avant cela, il va falloir créer des classes pour respecter le fonctionnement de Scala. Dans notre cas, on crée 2 classes <strong>Station</strong> et <strong>Trip</strong>.
 
 ```scala
 case class Station(stationId: String, name: String, long: Float, lat: Float)
@@ -47,10 +47,9 @@ def parseLine(line: String): Option[Trip] = {
     }
 }
 ```
-### 1.2) Création du graphes 
+### 1.2) Création du graphe 
 
-On va maintenant créer un graphe dont les noeuds représentent des stations de vélos et les relations représentent des trajets de vélos entre deux stations. Pour cela on va créer les RDD des stations et des Trips. Dans notre cas un trip sera composé de la station de départ, de la station d'arrivé et du trip. Tandis que une station contient un objet/class station avec les informations indiqué plus haut.
-
+On va maintenant créer un graphe dont les noeuds représentent des stations de vélos et les relations représentent des trajets de vélo entre deux stations. Pour cela on va créer les RDD des stations et des trips. Dans notre cas un trip sera composé de la station de départ, de la station d'arrivée et du trip. Tandis qu'une station contient un objet/class station avec les informations indiquées plus haut.
 
 ```scala
 // Construire l'RDD de nœuds (stations) et l'RDD d'arêtes (trajets)
@@ -71,8 +70,8 @@ name.hashCode.toLong & 0xFFFFFFFFL
 }
 ```
 
-## 2 - Calcul de degré
-### 2.1) Affiché tout les trajets entre le 05-12- 2021 et 25-12-2021
+## 2 - Calcul du degré
+### 2.1) Afficher tous les trajets entre le 05-12-2021 et 25-12-2021
 ```scala
 val dateStartref = "05-12-2021 00:00:00"
 val dateEndRef = "25-12-2021 00:00:00"
@@ -88,10 +87,10 @@ subgraph.vertices.collect().foreach(println)
 // Afficher les arêtes du sous-graphe
 subgraph.edges.collect().foreach(println)
 ```
-On vient tout d'abord transformé nos date pour pouvoir les comparé a celle de nos données. Ensuite on vient simplement faire un subgraph en ajoutant nos conditions sur les dates. 
+On vient tout d'abord transformer nos dates pour pouvoir les comparer à celle de nos données. Ensuite, on vient simplement faire un subgraph en ajoutant nos conditions sur les dates. 
 
 #### 2.2.1) Les 10 stations ayant le plus de trajets entrant
-Pour cela on vient trier le tableau, pour ensuite calculer pour chaque station le nombre de trajet pour lequel il est en station de départ. Afin de faciliter les calculs et les comparaisons, quand j'ai créer mes RDD j'ai hashé les noms des stations.
+Pour cela, on vient trier le tableau pour ensuite calculer le nombre de trajet pour chaque station pour lequel il est en station de départ. Afin de faciliter les calculs et les comparaisons, les noms des stations ont été hashé lors de la création de nos RDD.
 
 ```
 Station : 639314359 a 2375 trajets entrants.
@@ -120,7 +119,7 @@ Station : Hoboken Ave at Monmouth St a 1126 trajets entrants.
 ```
 
 #### 2.2.2) Les 10 stations ayant le plus de trajets entrant
-Pour cela on vient trier le tableau, pour ensuite calculer pour chaque station le nombre de trajet pour lequel il est en station d'arriver. Afin de faciliter les calculs et les comparaisons, quand j'ai créer mes RDD j'ai hashé les noms des stations.
+Pour cela, on vient trier le tableau pour ensuite calculer le nombre de trajet pour lequel il est en station d'arrivée pour chaque station. Afin de faciliter les calculs et les comparaisons, les noms des stations ont été hashé lors de la création de nos RDD.
 
 ```
 Station : 639314359 a 2358 trajets sortants.
@@ -150,14 +149,14 @@ Station : Marin Light Rail a 1089 trajets sortants.
 
 ## 3 - Proximité entre les stations
 ### 3.1) Station la plus proche en km
-La première étapes est de récupérer tout les trajets que l'on a. Ensuite on va filtrer et faire en sorte de récupérer que les trajets dont la station de départ est celle de l'id <strong>JC013</strong>. Après sa, on pouvait remarqué que certain trajet était les mêmes (avec les mêmes station d'arrivé), alors on décide d'avoir les trajets uniques pour gagner en performance. De plus au même moment on vient calculer la distance pour chaque trajet entre les 2 stations. On vient stocké sa dans un nouveau dataframe. Enfin on vient le parcourir afin de récupérer la plus petite valeur et l'afficher. Evidemement lors de la récupération de la valeur on a enlever le 0 car il pourrait y avoir un trajet dont la station d'arrivé est la même que celle de départ. Voici le résultat obtenue :
+La première étape est de récupérer tous les trajets que l'on a. On va ensuite filtrer et faire en sorte de récupérer que les trajets dont la station de départ est celle de l'id <strong>JC013</strong>. On remarque que certains trajets étaient les mêmes (avec les mêmes stations d'arrivées), alors on décide d'avoir des trajets uniques pour gagner en performance. De plus, au même moment, on vient calculer la distance pour chaque trajet entre les 2 stations. On stocke ensuite le résultat dans un nouveau dataframe. Enfin on vient parcourir le dataframe afin de récupérer la plus petite valeur et l'afficher. Évidemement lors de la récupération de la valeur, on enlève les valeurs égales à 0 car il pourrait y avoir un trajet dont la station d'arrivée est la même que celle de départ. Voici le résultat obtenu :
 
 ```
 Distance minimale entre Marin Light Rail et City Hall: 0.14957127656780697 kilomètres
 ```
 
 ### 3.2) Station la plus proche en temps 
-La première étapes est de récupérer tout les trajets que l'on a. Ensuite on va filtrer et faire en sorte de récupérer que les trajets dont la station de départ est celle de l'id <strong>JC013</strong>. Etant donné que dès le début on avait calculé le temps que mettait chaque trajet, on vient juste parcourir les trajets afin de récupérer la plus petite valeur en termes de temps et l'afficher. Evidemement lors de la récupération de la valeur on a enlever le 0 car il pourrait y avoir un trajet dont la station d'arrivé est la même que celle de départ.  Voici le résultat obtenue :
+La première étape est de récupérer tous les trajets que l'on a. On va ensuite filtrer et faire en sorte de récupérer uniquement les trajets dont la station de départ est celle de l'id <strong>JC013</strong>. Etant donné que dès le début, on calcule le temps que mettait chaque trajet, on vient juste parcourir les trajets afin de récupérer la plus petite valeur en terme de temps et l'afficher. Évidemement lors de la récupération de la valeur, on enlève les valeurs égales à 0 car il pourrait y avoir un trajet dont la station d'arrivée est la même que celle de départ. Voici le résultat obtenu :
 
 ```
 Distance minimale entre Marin Light Rail et Grand St: 1 minutes
